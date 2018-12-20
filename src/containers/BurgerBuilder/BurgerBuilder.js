@@ -41,14 +41,14 @@ class BurgerBuilder extends Component {
         // const ingredients = {
         //     ...this.state.ingredients
         // };
-        console.log("sandeer")
+        //console.log("sandeer")
         const sum = Object.keys(ingredients)
-            .map(igKey => { console.log(ingredients[igKey]); return ingredients[igKey]; })
+            .map(igKey => {return ingredients[igKey]; })
             .reduce((sum, el) => { return sum + el }, 0)
 
-        console.log(sum)
+        //console.log(sum)
         this.setState({ purchaseable: sum > 0 })
-        console.log(sum > 0)
+        //console.log(sum > 0)
     }
 
     addIngredientHandler = (type) => {
@@ -106,6 +106,7 @@ class BurgerBuilder extends Component {
                         ingredients={this.state.ingredients}
                         purchaseCancelled={this.purchaseCancelHandler}
                         purchaseContinued={this.purchaseContinueHandler}
+                        price={this.state.totalPrice}
                     ></OrderSummary>
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
